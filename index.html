@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+      }
+
+      .calculator {
+        background: #222;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+      #display {
+        width: 100%;
+        height: 50px;
+        font-size: 24px;
+        text-align: right;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: none;
+        outline: none;
+        background: #333;
+        color: white;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      button {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        background: #444;
+        color: white;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+      button:hover {
+        background: #666;
+      }
+      button:nth-child(1) {
+        background: #ff4136;
+      }
+      button:nth-child(1):hover {
+        background: #e62e26;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canculyator">
+      <input type="text" disabled  id="display" />
+      <div class="buttons">
+        <button onclick="clearInput()" >C</button>
+        <button onclick="apenddValue('7')">7</button>
+        <button onclick="apenddValue('8')">8</button>
+        <button onclick="apenddValue('9')">9</button>
+        <button onclick="apenddValue('/')">/</button>
+
+        <button onclick="apenddValue('4')">4</button>
+        <button onclick="apenddValue('5')">5</button>
+        <button onclick="apenddValue('6')">6</button>
+        <button onclick="apenddValue('*')" >*</button>
+
+        <button onclick="apenddValue('1')">1</button>
+        <button onclick=" apenddValue('2')" >2</button>
+        <button onclick="apenddValue('3')">3</button>
+        <button onclick="apenddValue('-')">-</button>
+
+        <button onclick="apenddValue('0')" >0</button>
+        <button onclick=" result()">=</button>
+        <button onclick="apenddValue('+')">+</button>
+      </div>
+    </div>
+    <script>
+    const display = document.getElementById('display')
+
+    function apenddValue(value){
+      display.value += value
+    }
+    function clearInput(){
+     display.value = " "
+    }
+    function result (){
+      display.value = eval(display.value)
+    }
+  
+
+    </script>
+  </body>
+</html>
